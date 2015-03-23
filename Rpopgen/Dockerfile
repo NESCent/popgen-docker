@@ -11,17 +11,26 @@ RUN rm -rf /tmp/*.rds \
     adegenet \
     hierfstat \
     pegas \
+    coalescentMCMC \
     mmod \
-    genetics
+    poppr \
+    strataG \
+    rmetasim \
+    genetics \
+&& rm -rf /tmp/downloaded_packages/ /tmp/*.rds
+
+## Bioconductor packages (they may be dependencies)
+RUN Rscript -e 'source("http://bioconductor.org/biocLite.R"); biocLite("qvalue")'
 
 ## Install population genetics packages from Github
-# (currently there are none)
-# RUN installGithub.r
+RUN installGithub.r \
+    whitlock/OutFLANK \
+&& rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 
 ## Install other useful packages from CRAN
-RUN rm -rf /tmp/*.rds \
-&&  install2.r --error \
+RUN install2.r --error \
     knitcitations \
+    phangorn \
     phylobase \
     phytools \
 && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
