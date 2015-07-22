@@ -17,7 +17,6 @@ RUN rm -rf /tmp/*.rds \
     strataG \
     rmetasim \
     genetics \
-    diveRsity \
 && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 
 ## Bioconductor packages (they may be dependencies)
@@ -35,3 +34,4 @@ RUN install2.r --error \
     phylobase \
     phytools \
 && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
+
