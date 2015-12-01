@@ -9,7 +9,6 @@ RUN rm -rf /tmp/*.rds \
 &&  install2.r --error \
     ape \
     adegenet \
-    hierfstat \
     pegas \
     coalescentMCMC \
     mmod \
@@ -23,8 +22,10 @@ RUN rm -rf /tmp/*.rds \
 RUN Rscript -e 'source("http://bioconductor.org/biocLite.R"); biocLite("qvalue")'
 
 ## Install population genetics packages from Github
+## (hierfstat included here temporarily until new release is on CRAN)
 RUN installGithub.r \
     whitlock/OutFLANK \
+    jgx65/hierfstat \
 && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 
 ## Install other useful packages from CRAN
