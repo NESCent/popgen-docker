@@ -16,6 +16,7 @@ RUN rm -rf /tmp/*.rds \
     strataG \
     rmetasim \
     genetics \
+    hierfstat \
 && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 
 ## Bioconductor packages (they may be dependencies)
@@ -25,7 +26,6 @@ RUN Rscript -e 'source("http://bioconductor.org/biocLite.R"); biocLite("qvalue")
 ## (hierfstat included here temporarily until new release is on CRAN)
 RUN installGithub.r \
     whitlock/OutFLANK \
-    jgx65/hierfstat \
 && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 
 ## Install other useful packages from CRAN
