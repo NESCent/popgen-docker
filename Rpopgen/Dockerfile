@@ -4,6 +4,9 @@
 FROM rocker/hadleyverse
 MAINTAINER Hilmar Lapp hilmar.lapp@duke.edu
 
+## Bioconductor dependencies of packages we install from CRAN
+RUN Rscript -e 'source("http://bioconductor.org/biocLite.R"); biocLite("Biostrings");'
+
 ## Install population genetics packages from CRAN
 RUN rm -rf /tmp/*.rds \
 &&  install2.r --error \
@@ -20,7 +23,7 @@ RUN rm -rf /tmp/*.rds \
 && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 
 ## Bioconductor packages (they may be dependencies)
-RUN Rscript -e 'source("http://bioconductor.org/biocLite.R"); biocLite("qvalue")'
+RUN Rscript -e 'source("http://bioconductor.org/biocLite.R"); biocLite("qvalue");'
 
 ## Install population genetics packages from Github
 ## (hierfstat included here temporarily until new release is on CRAN)
