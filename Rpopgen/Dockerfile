@@ -20,7 +20,7 @@ RUN rm -rf /tmp/*.rds \
 && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 
 ## Bioconductor packages (they may be dependencies)
-RUN Rscript -e 'source("http://bioconductor.org/biocLite.R"); biocLite(c("Biostrings", "qvalue"))'
+RUN Rscript -e 'source("http://bioconductor.org/biocLite.R"); biocLite("qvalue")'
 
 ## Install population genetics packages from Github
 ## (hierfstat included here temporarily until new release is on CRAN)
