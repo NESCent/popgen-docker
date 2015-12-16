@@ -10,6 +10,7 @@ RUN Rscript -e 'source("http://bioconductor.org/biocLite.R"); biocLite("Biostrin
 ## Install population genetics packages from CRAN
 RUN rm -rf /tmp/*.rds \
 &&  install2.r --error \
+    apex \
     ape \
     adegenet \
     pegas \
