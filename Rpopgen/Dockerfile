@@ -4,7 +4,7 @@
 FROM rocker/hadleyverse
 MAINTAINER Hilmar Lapp hilmar.lapp@duke.edu
 
-## Bioconductor dependencies of packages we install from CRAN
+## Bioconductor dependencies of packages we install from CRAN (specifically pegas)
 RUN Rscript -e 'source("http://bioconductor.org/biocLite.R"); biocLite("Biostrings");'
 
 ## Install population genetics packages from CRAN
