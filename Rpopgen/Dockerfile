@@ -4,6 +4,11 @@
 FROM rocker/hadleyverse
 MAINTAINER Hilmar Lapp hilmar.lapp@duke.edu
 
+## OpenBLAS is having some issues at the moment, this installs Atlas BLAS
+RUN apt-get update \
+&&  apt-get remove -y libopenblas-base \
+&&  apt-get install -y libatlas-base-dev
+
 ## Bioconductor dependencies of packages we install from CRAN (specifically pegas)
 RUN Rscript -e 'source("http://bioconductor.org/biocLite.R"); biocLite("Biostrings");'
 
