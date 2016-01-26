@@ -27,6 +27,7 @@ RUN rm -rf /tmp/*.rds \
     rmetasim \
     genetics \
     hierfstat \
+    pcadapt \
 && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 
 ## Bioconductor packages (they may be dependencies)
