@@ -28,6 +28,9 @@ RUN rm -rf /tmp/*.rds \
     genetics \
     hierfstat \
     pcadapt \
+    lme4 \
+    MuMIn \
+    multcomp \
 && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 
 ## Bioconductor packages (they may be dependencies)
