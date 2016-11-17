@@ -1,7 +1,7 @@
 ## Start with the hadleyverse image from Rocker, then add population
 ## genetics images on top.
 
-FROM rocker/hadleyverse
+FROM rocker/tidyverse:latest
 MAINTAINER Hilmar Lapp hilmar.lapp@duke.edu
 
 ## Bioconductor dependencies of packages we install from CRAN (specifically pegas)
