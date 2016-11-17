@@ -4,6 +4,11 @@
 FROM rocker/tidyverse:latest
 MAINTAINER Hilmar Lapp hilmar.lapp@duke.edu
 
+## Some of the R packages depend on package gsl, which requires gsl-dev
+## to be installed in order to succeed
+RUN apt-get update \
+    && apt-get install -y libgsl0-dev
+ 
 ## Bioconductor dependencies of packages we install from CRAN (specifically pegas)
 RUN Rscript -e 'source("http://bioconductor.org/biocLite.R"); biocLite("Biostrings");'
 
