@@ -18,6 +18,7 @@ RUN rm -rf /tmp/*.rds \
     apex \
     ape \
     adegenet \
+    adespatial \
     pegas \
     coalescentMCMC \
     mmod \
