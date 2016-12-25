@@ -43,6 +43,8 @@ RUN rm -rf /tmp/*.rds \
     lme4 \
     MuMIn \
     multcomp \
+    raster \
+    viridis \
 && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 
 ## Bioconductor packages (they may be dependencies)
