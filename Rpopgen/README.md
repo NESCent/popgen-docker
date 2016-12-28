@@ -1,3 +1,5 @@
+[![Docker Automated build](https://img.shields.io/docker/automated/hlapp/rpopgen.svg)](https://hub.docker.com/r/hlapp/rpopgen/) [![Docker Pulls](https://img.shields.io/docker/pulls/hlapp/rpopgen.svg)](https://hub.docker.com/r/hlapp/rpopgen/) [![Docker Stars](https://img.shields.io/docker/stars/hlapp/rpopgen.svg)](https://hub.docker.com/r/hlapp/rpopgen/)
+
 # Docker image for Population Genetics in R
 
 This image is intended to provide commonly used R packages for population genetic analysis on top of a comprehensive R image. The Dockerfile is monitored and automatically rebuilt upon changes at Docker Hub as [hlapp/rpopgen]. 
