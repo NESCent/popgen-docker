@@ -39,7 +39,6 @@ RUN rm -rf /tmp/*.rds \
     rmetasim \
     genetics \
     hierfstat \
-    pcadapt \
     lme4 \
     MuMIn \
     multcomp \
@@ -54,6 +53,7 @@ RUN Rscript -e 'source("http://bioconductor.org/biocLite.R"); biocLite("qvalue")
 ## (hierfstat included here temporarily until new release is on CRAN)
 RUN installGithub.r \
     whitlock/OutFLANK \
+    bcm-uga/pcadapt \
 && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 
 ## Install other useful packages from CRAN
