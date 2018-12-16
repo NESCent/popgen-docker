@@ -11,7 +11,9 @@ ARG DEBIAN_FRONTEND=noninteractive
 ## Some of the R packages depend on package gsl, which requires gsl-dev
 ## to be installed in order to succeed
 RUN apt-get update \
-    && apt-get install -y libgsl0-dev
+    && apt-get install -y \
+    libgsl0-dev \
+    libmagick++-dev
 
 ## The nloptr package is needed by lme4, and it itself needs to download the
 ## NLopt code from http://ab-initio.mit.edu/wiki/index.php/NLopt, which is
