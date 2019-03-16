@@ -13,7 +13,10 @@ ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update \
     && apt-get install -y \
     libgsl0-dev \
-    libmagick++-dev
+    libmagick++-dev \
+    libudunits2-dev \
+    gdal-bin \
+    libgdal-dev
 
 ## The nloptr package is needed by lme4, and it itself needs to download the
 ## NLopt code from http://ab-initio.mit.edu/wiki/index.php/NLopt, which is
