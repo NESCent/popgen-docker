@@ -8,8 +8,9 @@ MAINTAINER Hilmar Lapp hilmar.lapp@duke.edu
 ARG TERM=linux
 ARG DEBIAN_FRONTEND=noninteractive
 
-## Some of the R packages depend on package gsl, which requires gsl-dev
-## to be installed in order to succeed
+## Some of the R packages depend on libraries not already installed in the
+## base image, so they need to be installed here for the R package
+## installations to succeed.
 RUN apt-get update \
     && apt-get install -y \
     libgsl0-dev \
