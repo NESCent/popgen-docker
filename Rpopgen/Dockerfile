@@ -28,7 +28,10 @@ RUN install2.r --error \
 && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 
 ## Bioconductor dependencies of packages we install from CRAN (specifically pegas)
-RUN Rscript -e 'source("http://bioconductor.org/biocLite.R"); biocLite("Biostrings");'
+RUN install2.r --error BiocManager \
+&& Rscript -e 'requireNamespace("BiocManager"); BiocManager::install();' \
+&& Rscript -e 'requireNamespace("BiocManager"); BiocManager::install(c("Biostrings", "qvalue"));' \
+&& rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 
 ## Install population genetics packages from CRAN
 RUN rm -rf /tmp/*.rds \
@@ -52,9 +55,6 @@ RUN rm -rf /tmp/*.rds \
     viridis \
     pcadapt \
 && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
-
-## Bioconductor packages (they may be dependencies)
-RUN Rscript -e 'source("http://bioconductor.org/biocLite.R"); biocLite("qvalue");'
 
 ## Install population genetics packages from Github
 ## (hierfstat included here temporarily until new release is on CRAN)
