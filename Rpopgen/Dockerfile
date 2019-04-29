@@ -1,7 +1,7 @@
 ## Start with the hadleyverse image from Rocker, then add population
 ## genetics images on top.
 
-FROM rocker/tidyverse:latest
+FROM rocker/tidyverse:3.5.2
 MAINTAINER Hilmar Lapp hilmar.lapp@duke.edu
 
 # Prevent error messages from debconf about non-interactive frontend
