@@ -41,6 +41,8 @@ RUN rm -rf /tmp/*.rds \
     adegenet \
     adespatial \
     pegas \
+    phangorn \
+    phylobase \
     coalescentMCMC \
     mmod \
     poppr \
@@ -65,8 +67,6 @@ RUN installGithub.r \
 ## Install other useful packages from CRAN
 RUN install2.r --error \
     knitcitations \
-    phangorn \
-    phylobase \
     phytools \
 && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 
