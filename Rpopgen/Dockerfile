@@ -46,6 +46,7 @@ RUN rm -rf /tmp/*.rds \
     coalescentMCMC \
     mmod \
     poppr \
+    psych \
     strataG \
     rmetasim \
     genetics \
@@ -54,6 +55,7 @@ RUN rm -rf /tmp/*.rds \
     MuMIn \
     multcomp \
     raster \
+    vegan \
     viridis \
     pcadapt \
 && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
